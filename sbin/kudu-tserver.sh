@@ -114,7 +114,7 @@ start() {
   fi
 
 
-  /bin/su -s /bin/bash -c "/bin/bash -c 'cd ~ && echo \$\$ > ${PIDFILE} && exec ${EXEC_PATH} --flagfile=${CONF_PATH} > ${FLAGS_log_dir}/${DAEMON}.out 2>&1' &" $SVC_USER
+  /bin/bash -c "/bin/bash -c 'cd ~ && echo \$\$ > ${PIDFILE} && exec ${EXEC_PATH} --flagfile=${CONF_PATH} > ${FLAGS_log_dir}/${DAEMON}.out 2>&1' &"
   RETVAL=$?
 
   if [ $RETVAL -eq $STATUS_RUNNING ]; then

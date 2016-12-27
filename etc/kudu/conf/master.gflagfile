@@ -3,5 +3,5 @@
 --fromenv=rpc_bind_addresses
 --fromenv=log_dir
 
---fs_wal_dir=$KUDU_HOME/data/master
---fs_data_dirs=$KUDU_HOME/data/master
+--fs_wal_dir=/home/hadoop/kudu/data/master
+--fs_data_dirs=/home/hadoop/kudu/data/master
