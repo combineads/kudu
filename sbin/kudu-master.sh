@@ -180,22 +180,12 @@ condrestart(){
   [ -e $LOCKFILE ] && restart || :
 }
 
-check_for_root() {
-  if [ $(id -ur) -ne 0 ]; then
-    echo 'Error: root user required'
-    echo
-    exit 1
-  fi
-}
-
 service() {
   case "$1" in
     start)
-      check_for_root
       start
       ;;
     stop)
-      check_for_root
       stop
       ;;
     status)
@@ -203,11 +193,9 @@ service() {
       RETVAL=$?
       ;;
     restart)
-      check_for_root
       restart
       ;;
     condrestart|try-restart)
-      check_for_root
       condrestart
       ;;
     *)
